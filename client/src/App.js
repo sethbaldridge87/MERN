@@ -14,10 +14,15 @@ class App extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.bookSearch);
+    // console.log(this.state.bookSearch);
     API.getBooks(this.state.bookSearch)
-      .then(res => this.setState({books: res.data}))
-      .catch(err => console.log(err));
+      .then(res => {
+        console.log(res);
+        this.setState({
+          books: res.data
+        })
+      })
+      .catch(err => console.log("This is an error " + err));
   };
 
   handleInputChange = event => {
