@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css";
 
-function Form({onClick}) {
+function Form(props) {
     return (
       <div id="book_form" className="container">
-        <input type="text" />
-        <button className="btn" onClick={onClick}>Search</button>
+        <input type="text" onChange={props.onChange}/>
+        <button className="btn" onClick={props.onClick}>Search</button>
         <div id="results"></div>
       </div>
     )

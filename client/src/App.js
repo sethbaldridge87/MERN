@@ -12,13 +12,21 @@ class App extends Component {
     bookSearch: ""
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("handleFormSubmit has been activated");
+    console.log(this.state.bookSearch);
     API.getBooks(this.state.bookSearch)
       .then(res => this.setState({books: res.data}))
       .catch(err => console.log(err));
   };
+
+  handleInputChange = event => {
+    const { value } = event.target;
+
+    this.setState({
+      bookSearch: value
+    })
+  }
 
   render() {
     return (
@@ -27,6 +35,7 @@ class App extends Component {
         <Parallax />
         <Form
           onClick={this.handleFormSubmit}
+          onChange={this.handleInputChange}
         />
       </div>
     )
