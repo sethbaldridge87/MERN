@@ -3,6 +3,9 @@ h1 {
     text-align: center;
     padding: 150px 0;
 }
+#noBook {
+    color: #000;
+}
 .parallax-container {
     height: auto;
 }
