@@ -10,14 +10,15 @@ class App extends Component {
 
   state = {
     books: [],
-    bookSearch: ""
+    bookSearch: "",
+    bookSave: {}
   };
 
-  handleFormSubmit = (event) => {
+  handleFormSubmit = event => {
     event.preventDefault();
     API.getBooks(this.state.bookSearch)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         this.setState({
           books: res.data
         })
@@ -31,7 +32,12 @@ class App extends Component {
     this.setState({
       bookSearch: value
     })
-  }
+  };
+
+  // handleItemSubmit = () => {
+  //   console.log(this);
+  //   alert('test');
+  // }
 
   render() {
     return (
@@ -48,12 +54,13 @@ class App extends Component {
           <BookList>
             {this.state.books.map(book => {
               return (
-                <BookListItem
+                <BookListItem key={book.id}
                   title={book.volumeInfo.title}
                   authors={book.volumeInfo.authors}
                   description={book.volumeInfo.description}
                   image={book.volumeInfo.imageLinks.smallThumbnail}
                   link={book.volumeInfo.infoLink}
+                  // onClick={this.handleItemSubmit}
                 />
               )
             })}

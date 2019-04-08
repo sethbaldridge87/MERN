@@ -1,6 +1,7 @@
 const axios = require("axios");
 const router = require("express").Router();
-const destination = axios.default.baseURL = "https://www.googleapis.com/books/v1/volumes/"
+const destination = axios.default.baseURL = "https://www.googleapis.com/books/v1/volumes/";
+const db = require("../models");
 router.get("/books", (req, res) => {
     // console.log("begin request");
     // console.log({ req });
@@ -10,6 +11,16 @@ axios
     .then(({ data: { items } }) => res.json(items))
     .catch(err => console.log(err));
 });
+router.post("/books", (req, res) => {
+    console.log(req.body.entry);
+    db.Book.create(req.body.entry)
+        .then(function(result) {
+            // return db.findOneAndUpdate(
+            //     { $push: {book: result._id} },
+            //     { new: true }
+            // )
+        })
+})
 
 module.exports = router;
 
