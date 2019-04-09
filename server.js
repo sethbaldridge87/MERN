@@ -9,13 +9,8 @@ const apiRoutes = require("./routes/apiRoutes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
-
-var databaseUri = 'mongodb://localhost:3000';
-
-if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect(databaseUri);
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/public"));
 }
 
 // Define API routes here
