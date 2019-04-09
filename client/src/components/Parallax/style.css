@@ -1,10 +1,9 @@
 h1 {
-    color: #fff;
     text-align: center;
     padding: 150px 0;
 }
-#noBook {
-    color: #000;
+#greeter {
+    color: #fff;
 }
 .parallax-container {
     height: auto;

@@ -20,7 +20,25 @@ router.post("/books", (req, res) => {
             //     { new: true }
             // )
         })
-})
+        .catch(err => console.log(err));
+});
+router.get("/booksDB", (req, res) => {
+    // console.log(req.body);
+    db.Book.find(req.query)
+        .then(allResult => res.json(allResult)
+        
+        )
+        .catch(err => console.log(err));
+});
+router.delete("/books/:id", (req,res) => {
+    console.log("Request at apiRoutes*********************");
+    console.log(req.params.id);
+    db.Book.findByIdAndDelete(req.params.id)
+        .then(
+
+        )
+        .catch(err => console.log(err));
+});
 
 module.exports = router;
 
