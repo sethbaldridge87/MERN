@@ -22,7 +22,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MERN_books");
-console.log(process.env.MONGODB_URI);
+console.log(process.env);
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
