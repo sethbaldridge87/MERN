@@ -6,6 +6,9 @@ Technologies used: node.js, mongoDB, mongoose, express, ReactJS, Materialize
 
 Check it out here: https://the-book-nook.herokuapp.com/
 
+![alt text](https://raw.githubusercontent.com/sethbaldridge87/book_nook/master/book1.PNG)
+![alt text](https://raw.githubusercontent.com/sethbaldridge87/book_nook/master/book2.PNG)
+
 ## About This Boilerplate
 
 This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
