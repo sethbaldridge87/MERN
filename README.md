@@ -1,4 +1,4 @@
-# Create React Express App
+# Book Nook
 
 MERN Stack app that scrapes data from the Google Books API. Users can then save a personal list of books, which they can also delete from. 
 
