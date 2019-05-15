@@ -2,7 +2,7 @@
 
 MERN Stack app that scrapes data from the Google Books API. Users can then save a personal list of books, which they can also delete from. 
 
-Technologies used: node.js, mongoDB, mongoose, express, ReactJS, Materialize
+Technologies used: Node.js, MongoDB, mongoose, Express, ReactJS, Materialize
 
 Check it out here: https://the-book-nook.herokuapp.com/
 
